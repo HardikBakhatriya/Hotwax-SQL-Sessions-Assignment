@@ -40,17 +40,17 @@ ADD FOREIGN KEY (pincode) REFERENCES address(pincode);
 
 
 Q2.Writing sql query for the given requirements 
-1) Check status of your order
+1) Check status of your order.
 SELECT status FROM orders WHERE order_id = :order_id;
   
-2) Find total amount of your orders
+2) Find total amount of your orders.
 SELECT SUM(total) AS total_amountFROM orders WHERE user_id = :user_id;
 
-3)Update your city
+3)Update your city.
 UPDATE address SET city = :new_city WHERE pincode = :pincode;
 
-4) Change product description
+4) Change product description.
 UPDATE products SET product_description = :new_description WHERE product_id = :product_id;
 
-5) Display returnable products
+5) Display returnable products.
 SELECT product_id, product_name FROM products WHERE product_returnable = 'yes';
